@@ -1,0 +1,158 @@
+# encoding: utf-8
+# 2020 R2
+SetScriptVersion(Version="20.2.221")
+system1 = GetSystem(Name="SYS")
+engineeringData1 = system1.GetContainer(ComponentName="Engineering Data")
+material1 = engineeringData1.GetMaterial(Name="S45C")
+matlProp1 = material1.CreateProperty(
+    Name="S-N Curve",
+    Qualifiers={"Definition": "", "Behavior": ""})
+matlProp1.SetQualifier(
+    Qualifier="Interpolation",
+    Value="Semi-Log")
+matlProp1.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=-1,
+    Variables=["Cycles"],
+    Values=[["10"]])
+matlProp1.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=-1,
+    Variables=["Cycles"],
+    Values=[["100"]])
+matlProp1.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=-1,
+    Variables=["Cycles"],
+    Values=[["1000"]])
+matlProp1.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=-1,
+    Variables=["Cycles"],
+    Values=[["10000"]])
+matlProp1.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=3,
+    Variables=["Cycles"],
+    Values=[["10000"]])
+matlProp1.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=-1,
+    Variables=["Cycles"],
+    Values=[["100000"]])
+matlProp1.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=-1,
+    Variables=["Cycles"],
+    Values=[["1000000"]])
+matlProp1.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=-1,
+    Variables=["Cycles"],
+    Values=[["10000000"]])
+matlProp1.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=2)
+matlProp1.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=1)
+matlProp1.DeleteData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=0)
+matlProp1.BeginBatchUpdate()
+matlProp1.SetVariableProperty(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    VariableName="Alternating Stress",
+    Property="Unit",
+    Value="MPa")
+matlProp1.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Variables=["Alternating Stress"],
+    Values=[["7.8886090522101181E-31 [MPa]", "7.8886090522101181E-31 [MPa]", "7.8886090522101181E-31 [MPa]", "7.8886090522101181E-31 [MPa]"]])
+matlProp1.EndBatchUpdate()
+matlProp1.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Variables=["Alternating Stress"],
+    Values=[["350 [MPa]"]])
+matlProp1.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=1,
+    Variables=["Alternating Stress"],
+    Values=[["300 [MPa]"]])
+matlProp1.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=2,
+    Variables=["Alternating Stress"],
+    Values=[["250 [MPa]"]])
+matlProp1.SetData(
+    SheetName="S-N Curve",
+    SheetQualifiers={"Definition": "", "Behavior": "", "Interpolation": "Semi-Log"},
+    Index=3,
+    Variables=["Alternating Stress"],
+    Values=[["250 [MPa]"]])
+matlProp1.SetQualifier(
+    Qualifier="Interpolation",
+    Value="Log-Log")
+matlProp1.SetQualifier(
+    Qualifier="Interpolation",
+    Value="Semi-Log")
+Save(Overwrite=True)
+modelComponent1 = system1.GetComponent(Name="Model")
+modelComponent1.Refresh()
+model1 = system1.GetContainer(ComponentName="Model")
+model1.Edit()
+matlProp2 = material1.CreateProperty(
+    Name="Tensile Yield Strength",
+    Qualifiers={"Definition": "", "Behavior": ""})
+matlProp3 = material1.CreateProperty(
+    Name="Tensile Ultimate Strength",
+    Qualifiers={"Definition": "", "Behavior": ""})
+matlProp2.SetData(
+    Index=-1,
+    Variables=["Tensile Yield Strength"],
+    Values=[["600 [Pa]"]])
+matlProp2.SetVariableProperty(
+    VariableName="Tensile Yield Strength",
+    Property="Unit",
+    Value="MPa")
+matlProp2.SetData(
+    Variables=["Tensile Yield Strength"],
+    Values=[["0.0006 [MPa]"]])
+matlProp2.SetData(
+    Variables=["Tensile Yield Strength"],
+    Values=[["600 [MPa]"]])
+matlProp3.SetVariableProperty(
+    VariableName="Tensile Ultimate Strength",
+    Property="Unit",
+    Value="MPa")
+matlProp3.SetData(
+    Index=-1,
+    Variables=["Tensile Ultimate Strength"],
+    Values=[["900 [MPa]"]])
+Save(Overwrite=True)
+modelComponent1.Refresh()
+model1.Edit()
+modelComponent1.Refresh()
+setupComponent1 = system1.GetComponent(Name="Setup")
+setupComponent1.Refresh()
+setup1 = system1.GetContainer(ComponentName="Setup")
+setup1.Edit()
+model1.Exit()
+Save(Overwrite=True)
+Open(FilePath="C:/Users/shohei/Downloads/fem-izumi/5-2/simple support beam.wbpj")

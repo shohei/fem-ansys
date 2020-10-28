@@ -1,0 +1,8 @@
+# encoding: utf-8
+# 2020 R2
+SetScriptVersion(Version="20.2.221")
+system1 = GetSystem(Name="SYS")
+modelComponent1 = system1.GetComponent(Name="Model")
+modelComponent1.Refresh()
+Save(Overwrite=True)
+Open(FilePath="C:/Users/shohei/Downloads/fem-izumi/5-2-5/beam element dependency.wbpj")

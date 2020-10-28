@@ -1,0 +1,14 @@
+/COM,ANSYS RELEASE 2020 R2           BUILD 20.2      UP20200601       15:45:26
+
+ *** WARNING ***                         CP =       0.297   TIME= 15:45:27
+ An inactive degree of freedom label (ROTZ) was found on the D command.  
+ The current degree of freedom set is: UX UY                             
+  This degree of freedom will be ignored.                                
+
+ *** WARNING ***                         CP =       0.297   TIME= 15:45:27
+ No valid degree of freedom labels were input.  The D command is         
+ ignored.                                                                
+
+ *** WARNING ***                         CP =       0.297   TIME= 15:45:27
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    

@@ -1,0 +1,9 @@
+# encoding: utf-8
+# 2020 R2
+SetScriptVersion(Version="20.2.221")
+system1 = GetSystem(Name="SYS")
+model1 = system1.GetContainer(ComponentName="Model")
+model1.Edit()
+model1.Exit()
+Save(Overwrite=True)
+Open(FilePath="C:/Users/shohei/Downloads/fem-izumi/5-3-4/beam with a hole.wbpj")
